@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    tools:context=".Activity.LoginActivity">
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="180dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:contentDescription="@string/gambar"
+            android:src="@drawable/esaunggul" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/judul"
+            android:textColor="@color/colorBlack" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_pesan_login"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/kotak_login"
+                android:gravity="center"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="NIP/Password anda salah!"
+                android:textColor="@color/colorPrimaryDark"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/edt_nip_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/kotak_login"
+                android:drawableStart="@drawable/kotak_username"
+                android:drawablePadding="4dp"
+                android:hint="Masukkan NIP"
+                android:inputType="number"
+                android:textColor="@color/colorBlack" />
+
+            <EditText
+                android:id="@+id/edt_password_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/kotak_login"
+                android:drawableStart="@drawable/kotak_password"
+                android:drawablePadding="4dp"
+                android:hint="Masukkan Password"
+                android:inputType="textPassword"
+                android:textColor="@color/colorBlack" />
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_login"
+            android:text="LOGIN"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp" />
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/silahkan_login"
+            android:textColor="@color/colorBlack" />
+    </LinearLayout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+</RelativeLayout>

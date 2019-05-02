@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">INFUS</string>
+    <string name="silahkan_login">Silahkan Login dengan menggunakan Nomor induk Pegawai anda</string>
+    <string name="judul">Rancang Bangun Prototype Pemantauan Cairan Infus Berbasis Internet of Things (IoT)</string>
+    <string name="gambar">gambar</string>
+    <string name="data_pemantauan_cairan_infus">Data Pemantauan Cairan Infus</string>
+    <string name="gambar_infus">gambar infus</string>
+    <string name="pilih_mode">pilih mode sesuai dengan kondisi pasien</string>
+    <string name="makro">MAKRO</string>
+    <string name="mikro">MIKRO</string>
+    <string name="halo">Halo,</string>
+</resources>
