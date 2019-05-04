@@ -1,22 +1,19 @@
 package com.ardi.infusmonitoring.Activity
 
-import android.os.Build
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
+import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.Window
 import com.ardi.infusmonitoring.ApiRepository.ApiRepository
 import com.ardi.infusmonitoring.Entity.User
 import com.ardi.infusmonitoring.Interface.UserView
-import com.ardi.infusmonitoring.Item.MD5
 import com.ardi.infusmonitoring.Item.SharedPreference
-import com.ardi.infusmonitoring.MainActivity
 import com.ardi.infusmonitoring.Presenter.UserPresenter
 import com.ardi.infusmonitoring.R
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.startActivity
+import java.io.Serializable
 
 class LoginActivity : AppCompatActivity(), UserView {
     lateinit var nip: String
@@ -38,8 +35,8 @@ class LoginActivity : AppCompatActivity(), UserView {
 
                 //password
                 if (user.passwordUser == pass) {
-                    println("USER: ${user.nipUser}")
-                    startActivity<MainActivity>()
+                    println("USER: ${user.namaUser}")
+                    startActivity<MainActivity>("data" to user as Serializable)
                     this.finish()
 
                 } else if (user.passwordUser != pass) {
@@ -65,6 +62,14 @@ class LoginActivity : AppCompatActivity(), UserView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         pref = SharedPreference(this)
+        if (!pref.getValueString("NIP").isNullOrEmpty()){
+            startActivity<MainActivity>()
+            this.finish()
+        }
+
+
+
+
         val loading = progressBar
 
         nip = String()
@@ -90,6 +95,4 @@ class LoginActivity : AppCompatActivity(), UserView {
             }
         }
     }
-
-
 }

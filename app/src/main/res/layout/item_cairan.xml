@@ -14,7 +14,7 @@
         card_view:cardCornerRadius="5dp">
 
     <LinearLayout
-            android:background="@color/colorWhite"
+
             android:id="@+id/cv_infus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -80,13 +80,13 @@
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:paddingBottom="8dp"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp">
 
             <Button
-                    android:id="@+id/btn_set_detail"
+                    android:id="@+id/btn_set_detail_cairan"
                     android:background="@drawable/button_login"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -16,6 +16,8 @@ data class User(
         val alamatUser: String? = null,
         @SerializedName("tanggal_lahir")
         val tanggalLahir: String? = null,
+        @SerializedName("tanggal_masuk")
+        val tanggalMasuk: String? = null,
         @SerializedName("password")
         val passwordUser: String? = null
 ) : Serializable
