@@ -3,6 +3,7 @@ package com.ardi.infusmonitoring.Activity
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.view.View.GONE
 import android.view.Window
 import com.ardi.infusmonitoring.ApiRepository.ApiRepository
 import com.ardi.infusmonitoring.Entity.User
@@ -67,9 +68,6 @@ class LoginActivity : AppCompatActivity(), UserView {
             this.finish()
         }
 
-
-
-
         val loading = progressBar
 
         nip = String()
@@ -85,9 +83,11 @@ class LoginActivity : AppCompatActivity(), UserView {
             nip = edt_nip_login.text.toString()
             if (edt_nip_login.text.isNullOrBlank()) {
                 edt_nip_login.setError("Tidak Boleh Kosong")
+                loading.visibility = GONE
             }
             if (edt_password_login.text.isNullOrBlank()) {
                 edt_password_login.setError("Tidak Boleh Kosong")
+                loading.visibility = GONE
             } else {
                 nip = edt_nip_login.text.toString()
                 pass = edt_password_login.text.toString()
