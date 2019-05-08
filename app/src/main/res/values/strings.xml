@@ -9,4 +9,6 @@
     <string name="makro">MAKRO</string>
     <string name="mikro">MIKRO</string>
     <string name="halo">Halo,</string>
+    <string name="alamat">Alamat : </string>
+    <string name="foto_user">foto user</string>
 </resources>

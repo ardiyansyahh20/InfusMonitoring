@@ -63,7 +63,7 @@ class LoginActivity : AppCompatActivity(), UserView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         pref = SharedPreference(this)
-        if (!pref.getValueString("NIP").isNullOrEmpty()){
+        if (!pref.getValueString("NIP").isNullOrEmpty()) {
             startActivity<MainActivity>()
             this.finish()
         }
