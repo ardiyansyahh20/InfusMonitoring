@@ -12,7 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Activity.DetailUserActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:label="Profil"
+            android:parentActivityName=".Activity.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activity.MainActivity"/>
+        </activity>
         <activity
             android:name=".Activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />

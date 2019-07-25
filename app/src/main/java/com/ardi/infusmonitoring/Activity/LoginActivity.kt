@@ -51,7 +51,7 @@ class LoginActivity : AppCompatActivity(), UserView {
 //            tv_pesan_login.setText("Nomor tidak terdaftar ")
 //            tv_pesan_login.visibility = View.VISIBLE
 //        }
-        progressBar.visibility = View.GONE
+        progressBar.visibility = GONE
     }
 
     internal lateinit var window: Window

@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/health"
     android:paddingStart="16dp"
     android:paddingTop="16dp"
     android:paddingEnd="16dp"
@@ -26,10 +25,10 @@
             android:src="@drawable/ic_person_black_24dp" />
 
         <TextView
-            android:layout_marginTop="4dp"
             android:id="@+id/tv_nama_user_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:gravity="center"
             android:padding="4dp"
             android:text="Muhamad Ardiyansyah"
@@ -57,8 +56,8 @@
                 android:id="@+id/tv_nip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NIP : "
                 android:layout_marginEnd="4dp"
+                android:text="NIP : "
                 android:textColor="@color/colorBlack"
                 android:textSize="16sp" />
 
@@ -71,6 +70,7 @@
                 android:textSize="16sp" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -80,8 +80,8 @@
                 android:id="@+id/tv_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Email : "
                 android:layout_marginEnd="4dp"
+                android:text="Email : "
                 android:textColor="@color/colorBlack"
                 android:textSize="16sp" />
 
@@ -95,25 +95,28 @@
 
         </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-
-    </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
             <TextView
-                android:layout_marginEnd="4dp"
                 android:id="@+id/tv_jenis_kelamin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
                 android:text="jenis Kelamin : "
                 android:textColor="@color/colorBlack"
                 android:textSize="16sp" />
+
             <TextView
                 android:id="@+id/tv_jenis_kelamin_user_detail"
                 android:layout_width="match_parent"
@@ -122,18 +125,21 @@
                 android:textColor="@color/colorBlack"
                 android:textSize="16sp" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
-                android:layout_marginEnd="4dp"
                 android:id="@+id/tv_tanggal_lahir"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
                 android:text="Tanggal Lahir : "
                 android:textColor="@color/colorBlack"
                 android:textSize="16sp" />
+
             <TextView
                 android:id="@+id/tv_tanggal_lahir_user_detail"
                 android:layout_width="match_parent"
@@ -147,14 +153,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
-                android:layout_marginEnd="4dp"
                 android:id="@+id/tv_jabatan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
                 android:text="Jabatan : "
                 android:textColor="@color/colorBlack"
                 android:textSize="16sp" />
+
             <TextView
                 android:id="@+id/tv_jabatan_user_detail"
                 android:layout_width="match_parent"
@@ -168,14 +176,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
-                android:layout_marginEnd="4dp"
                 android:id="@+id/tv_tanggal_masuk"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
                 android:text="Mulai Kerja : "
                 android:textColor="@color/colorBlack"
                 android:textSize="16sp" />
+
             <TextView
                 android:id="@+id/tv_tanggal_masuk_user_detail"
                 android:layout_width="match_parent"
@@ -190,14 +200,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
-                android:layout_marginEnd="4dp"
                 android:id="@+id/tv_alamat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
                 android:text="Alamat : "
                 android:textColor="@color/colorBlack"
                 android:textSize="16sp" />
+
             <TextView
                 android:id="@+id/tv_alamat_user_detail"
                 android:layout_width="match_parent"

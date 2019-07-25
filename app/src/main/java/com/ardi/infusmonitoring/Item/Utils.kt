@@ -20,7 +20,7 @@ fun View.invisible() {
 @SuppressLint("SimpleDateFormat")
 fun getStringDate(date: String): String? {
     val dateFormat = SimpleDateFormat("yyyy-MM-dd")
-    val output = SimpleDateFormat("EEE, dd MMM yyy")
+    val output = SimpleDateFormat("EEEE, dd MMMM yyy")
     var t: Date? = null
     try {
         t = dateFormat.parse(date)

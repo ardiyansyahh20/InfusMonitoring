@@ -21,6 +21,11 @@ class DetailUserActivity : AppCompatActivity() {
     var tanggalMasuk: String? = ""
     var jenisKelamin: String? = ""
 
+    var ft  = 3
+    var jam = 0
+    var ml = 0
+    var tpm = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_user)

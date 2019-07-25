@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-android:background="@drawable/health"
     tools:context=".Activity.MainActivity">
 
     <LinearLayout
@@ -18,12 +17,15 @@ android:background="@drawable/health"
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@drawable/kotak_login"
+            android:padding="8dp">
 
             <TextView
                 android:id="@+id/tv_halo_menu_utama"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingStart="0dp"
                 android:paddingEnd="4dp"
                 android:text="@string/halo"
                 android:textColor="@color/colorBlack"
@@ -31,10 +33,10 @@ android:background="@drawable/health"
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_toEndOf="@id/tv_halo_menu_utama"
                 android:id="@+id/tv_nama_menu_utama"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/tv_halo_menu_utama"
                 android:text="Muhamad Ardiyansyah"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18sp"
@@ -42,14 +44,14 @@ android:background="@drawable/health"
 
         </RelativeLayout>
 
-        <View
-            android:id="@+id/view"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="16dp"
-            android:background="@color/colorPrimaryDark"
-            android:visibility="visible" />
+        <!--<View-->
+        <!--android:id="@+id/view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="2dp"-->
+        <!--android:layout_marginTop="2dp"-->
+        <!--android:layout_marginBottom="16dp"-->
+        <!--android:background="@color/colorPrimaryDark"-->
+        <!--android:visibility="visible" />-->
 
         <TextView
             android:layout_width="match_parent"
@@ -89,7 +91,8 @@ android:background="@drawable/health"
                 android:orientation="horizontal"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
-                android:paddingBottom="8dp">
+                android:paddingBottom="8dp"
+                android:weightSum="2">
 
                 <Button
                     android:id="@+id/btn_set_makro"
@@ -109,6 +112,7 @@ android:background="@drawable/health"
 
             </LinearLayout>
         </LinearLayout>
+
         <Button
             android:id="@+id/btn_logout"
             style="@style/Base.Widget.AppCompat.Button.Colored"
@@ -116,6 +120,7 @@ android:background="@drawable/health"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="logout" />
+
         <Button
             android:id="@+id/btn_profil"
             style="@style/Base.Widget.AppCompat.Button.Colored"

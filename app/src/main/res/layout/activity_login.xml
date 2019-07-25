@@ -10,12 +10,13 @@
     tools:context=".Activity.LoginActivity">
 
     <TextView
-        android:layout_alignParentBottom="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="Muhamad Ardiyansyah | 201581257"
         android:textColor="@color/colorBlack" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,7 +26,7 @@
             android:layout_width="140dp"
             android:layout_height="160dp"
             android:layout_gravity="center"
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="40dp"
             android:contentDescription="@string/gambar"
             android:src="@drawable/ueu" />
 
@@ -43,7 +44,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:orientation="vertical">
 
             <TextView
@@ -109,11 +110,12 @@
             android:text="@string/silahkan_login"
             android:textColor="@color/colorBlack" />
     </LinearLayout>
+
     <ProgressBar
-        android:visibility="gone"
         android:id="@+id/progressBar"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" />
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
 </RelativeLayout>

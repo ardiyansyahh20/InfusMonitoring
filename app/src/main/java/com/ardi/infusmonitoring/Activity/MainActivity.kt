@@ -3,14 +3,12 @@ package com.ardi.infusmonitoring.Activity
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.ardi.infusmonitoring.Entity.User
-import com.ardi.infusmonitoring.Interface.UserView
 import com.ardi.infusmonitoring.Item.SharedPreference
 import com.ardi.infusmonitoring.R
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
-import java.io.Serializable
 
-class MainActivity : AppCompatActivity(){
+class MainActivity : AppCompatActivity() {
 
     lateinit var user: User
     lateinit var pref: SharedPreference
@@ -26,12 +24,13 @@ class MainActivity : AppCompatActivity(){
     var tanggalMasuk: String? = ""
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         pref = SharedPreference(this)
-        user= User(null, null, null, null, null,
+        user = User(null, null, null, null, null,
                 null, null, null, null, null)
         if (pref.getValueString("NIP").isNullOrEmpty()) {
             user = intent.getSerializableExtra("data") as User
