@@ -1,14 +1,48 @@
 package com.ardi.infusmonitoring.Activity
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.ardi.infusmonitoring.ApiRepository.ApiRepository
+import com.ardi.infusmonitoring.Entity.Infuse
+import com.ardi.infusmonitoring.Entity.Status
 import com.ardi.infusmonitoring.Entity.User
+import com.ardi.infusmonitoring.Interface.InfuseView
 import com.ardi.infusmonitoring.Item.SharedPreference
+import com.ardi.infusmonitoring.Presenter.InfusePresenter
 import com.ardi.infusmonitoring.R
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.item_cairan.*
+import kotlinx.android.synthetic.main.item_tetesan.*
 import org.jetbrains.anko.startActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),InfuseView {
+    override fun setDataInfuse(list: List<Status>) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun getDataInfuse(list: List<Infuse>) {
+
+        if(!list.isNullOrEmpty()){
+            val infuse = list[0]
+            var status = "null"
+
+            if(infuse.stated.equals("1")){
+                status = "ADA"
+            }else{
+                status = "Kosong"
+            }
+
+            tv_ft.setText("${infuse.ft}/1ml")
+            tv_cairan.setText("${infuse.ml}/ml")
+            tv_stat.setText("${status}")
+            tv_TPM.setText("${infuse.tpm}")
+        }
+
+
+
+    }
 
     lateinit var user: User
     lateinit var pref: SharedPreference
@@ -23,11 +57,19 @@ class MainActivity : AppCompatActivity() {
     var tanggalLahir: String? = ""
     var tanggalMasuk: String? = ""
 
+    lateinit var gson: Gson
+    lateinit var apiRepository: ApiRepository
+    lateinit var presenter: InfusePresenter
+
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val data = intent.getStringExtra("TPM")
 
         pref = SharedPreference(this)
         user = User(null, null, null, null, null,
@@ -57,10 +99,20 @@ class MainActivity : AppCompatActivity() {
         tanggalMasuk = pref.getValueString("TANGGALMASUK")
         jenisKelamin = pref.getValueString("JENISKELAMIN")
 
+        gson = Gson()
+        apiRepository = ApiRepository()
+        presenter = InfusePresenter(apiRepository,gson,this)
+        presenter.getDataInfuse()
+
+
+
+
+
 
 
         println("data user nama : $nama")
         println("nim user : $nip")
+
 
         tv_nama_menu_utama.text = nama
         btn_logout.setOnClickListener {
@@ -71,6 +123,10 @@ class MainActivity : AppCompatActivity() {
 
         btn_profil.setOnClickListener {
             startActivity<DetailUserActivity>("user" to user)
+        }
+        btn_set_makro.setOnClickListener {
+            startActivity<Setup>("data" to user)
+            finish()
         }
 
     }

@@ -11,4 +11,8 @@
     <string name="halo">Halo,</string>
     <string name="alamat">Alamat : </string>
     <string name="foto_user">foto user</string>
+    <string name="faktor_tetes">Faktor tetes\t\t\t :</string>
+    <string name="jumlah_cairan">Jumlah Cairan\t :</string>
+    <string name="status_cairan">Status Cairan\t\t :</string>
+    <string name="waktu_jam">Waktu/Jam\t\t\t :</string>
 </resources>

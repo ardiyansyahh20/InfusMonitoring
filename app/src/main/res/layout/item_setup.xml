@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:layout_gravity="center"
     android:layout_marginLeft="16dp"
     android:layout_marginTop="16dp"
     android:layout_marginRight="16dp"
     android:layout_marginBottom="16dp"
+    android:background="@drawable/esaunggul"
     card_view:cardCornerRadius="5dp">
 
     <LinearLayout
         android:id="@+id/cv_infus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SETUP TETES" />
 
         <RelativeLayout
             android:id="@+id/item_infus"
@@ -31,73 +37,117 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:contentDescription="@string/gambar_infus"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_infus" />
+                android:src="@drawable/ic_developer_board_black_24dp" />
 
             <TextView
+
                 android:id="@+id/tv_item_tetes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
                 android:layout_toEndOf="@id/img_item_infus"
                 android:layout_toRightOf="@id/img_item_infus"
-                android:text="Faktor tetes\t\t\t\t\ :"
+                android:text="@string/faktor_tetes"
                 android:textColor="@color/colorBlack"
                 android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/tv_ft"
+            <EditText
+                android:id="@+id/edt_faktor_tetes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/tv_item_jumlah"
-                android:hint="500 ml"
-                android:textSize="18sp"
-                android:textColor="#000000" />
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/tv_item_tetes"
+                android:background="@drawable/kotak_login"
+                android:hint="20" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/edt_faktor_tetes"
+                android:text=" /1 ml"
+                android:textColor="#000000"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/tv_item_jumlah"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_item_tetes"
-                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
                 android:layout_toEndOf="@id/img_item_infus"
                 android:layout_toRightOf="@id/img_item_infus"
-                android:text="Jumlah Cairan :"
+                android:text="@string/jumlah_cairan"
                 android:textColor="@color/colorBlack"
                 android:textSize="16sp" />
 
-            <TextView
-                android:textSize="18sp"
-                android:id="@+id/tv_cairan"
+            <EditText
+                android:id="@+id/edt_jumlah_ml"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_item_tetes"
-                android:layout_toEndOf="@id/tv_item_jumlah"
-                android:hint="500 ml"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/tv_item_jumlah"
+                android:background="@drawable/kotak_login"
+                android:hint="500" />
 
-                android:textColor="#000000" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_item_tetes"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/edt_jumlah_ml"
+                android:text=" ml"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
 
             <TextView
                 android:id="@+id/tv_item_batas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_item_jumlah"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
                 android:layout_toEndOf="@+id/img_item_infus"
                 android:layout_toRightOf="@+id/img_item_infus"
-                android:text="Cairan \t\t\t\t\t\t\t\t:"
+                android:text="@string/waktu_jam"
                 android:textColor="@color/colorBlack"
-                android:textSize="18sp" />
-            <TextView
-                android:id="@+id/tv_stat"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/edt_waktu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_item_jumlah"
-                android:layout_toRightOf="@+id/tv_item_batas"
-                android:hint=" ada "
-                android:layout_marginStart="8dp"
-                android:textColor="@color/colorBlack"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/tv_item_jumlah"
+                android:background="@drawable/kotak_login"
+                android:hint="100"
                 android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_item_jumlah"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/edt_waktu"
+                android:text=" menit"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+
         </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnHitung"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hitung" />
     </LinearLayout>
 
 </android.support.v7.widget.CardView>

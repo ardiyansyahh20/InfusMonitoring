@@ -51,14 +51,26 @@
                     android:textColor="@color/colorBlack"
                     android:textSize="16sp"
                     android:id="@+id/tv_item_laju_tetes"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_item_tetes"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_toEndOf="@id/img_item_tetesan"
                     android:layout_toRightOf="@id/img_item_tetesan"
-                    android:text="TPM : 24 tetes/menit"/>
+                    android:text="TPM \t\t\t:"/>
+            <TextView
+                android:id="@+id/tv_TPM"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_item_tetes"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_toEndOf="@id/tv_item_laju_tetes"
+                android:layout_toRightOf="@id/tv_item_laju_tetes"
+                android:text="0/menit"/>
 
         </RelativeLayout>
 
