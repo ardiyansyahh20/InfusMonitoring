@@ -10,13 +10,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".Activity.DetailUserActivity"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Activity.Setup"></activity>
+        <activity
+            android:name=".Activity.DetailUserActivity"
             android:label="Profil"
             android:parentActivityName=".Activity.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activity.MainActivity"/>
+                android:value=".Activity.MainActivity" />
         </activity>
         <activity
             android:name=".Activity.MainActivity"

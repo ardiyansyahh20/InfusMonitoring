@@ -37,7 +37,7 @@ class LoginActivity : AppCompatActivity(), UserView {
                 //password
                 if (user.passwordUser == pass) {
                     println("USER: ${user.namaUser}")
-                    startActivity<MainActivity>("data" to user as Serializable)
+                    startActivity<Setup>("data" to user as Serializable)
                     this.finish()
 
                 } else if (user.passwordUser != pass) {
@@ -64,7 +64,7 @@ class LoginActivity : AppCompatActivity(), UserView {
         setContentView(R.layout.activity_login)
         pref = SharedPreference(this)
         if (!pref.getValueString("NIP").isNullOrEmpty()) {
-            startActivity<MainActivity>()
+            startActivity<Setup>()
             this.finish()
         }
 
