@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/img_item_infus"
                 android:layout_toRightOf="@id/img_item_infus"
-                android:text="Faktor tetes\t\t\t\t\ :"
+                android:text="Faktor tetes :"
                 android:textColor="@color/colorBlack"
                 android:textSize="16sp" />
 
@@ -50,9 +50,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/tv_item_jumlah"
+                android:layout_alignParentRight="true"
                 android:hint="500 ml"
                 android:textSize="18sp"
-                android:textColor="#000000" />
+                android:textColor="@color/colorBlack" />
 
             <TextView
                 android:id="@+id/tv_item_jumlah"
@@ -74,7 +75,7 @@
                 android:layout_below="@id/tv_item_tetes"
                 android:layout_toEndOf="@id/tv_item_jumlah"
                 android:hint="500 ml"
-
+                android:layout_alignParentRight="true"
                 android:textColor="#000000" />
 
             <TextView
@@ -84,16 +85,18 @@
                 android:layout_below="@id/tv_item_jumlah"
                 android:layout_toEndOf="@+id/img_item_infus"
                 android:layout_toRightOf="@+id/img_item_infus"
-                android:text="Cairan \t\t\t\t\t\t\t\t:"
+                android:text="Cairan :"
                 android:textColor="@color/colorBlack"
                 android:textSize="18sp" />
             <TextView
+                android:layout_alignParentRight="true"
                 android:id="@+id/tv_stat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_item_jumlah"
                 android:layout_toRightOf="@+id/tv_item_batas"
-                android:hint=" ada "
+                android:hint=" ADA "
+                android:textStyle="bold"
                 android:layout_marginStart="8dp"
                 android:textColor="@color/colorBlack"
                 android:textSize="18sp" />

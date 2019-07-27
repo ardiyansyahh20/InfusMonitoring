@@ -66,6 +66,7 @@ btnHitung.setOnClickListener {
     var mlInt : Int = ml.toInt()
     var jamInt : Int = jam.toInt()
 
+    //rumus infus TPM = (jumlah cairan X faktor tetes) / jam(hitungan menit)
     val JTPM = (mlInt * ftInt) / (jamInt)
 
     presenter.setDataInfuse(JTPM.toString(),jam,ml,ft)

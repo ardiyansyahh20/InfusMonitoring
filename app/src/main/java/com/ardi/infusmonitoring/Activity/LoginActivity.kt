@@ -37,7 +37,7 @@ class LoginActivity : AppCompatActivity(), UserView {
                 //password
                 if (user.passwordUser == pass) {
                     println("USER: ${user.namaUser}")
-                    startActivity<Setup>("data" to user as Serializable)
+                    startActivity<MainActivity>("data" to user as Serializable)
                     this.finish()
 
                 } else if (user.passwordUser != pass) {
