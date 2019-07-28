@@ -58,8 +58,10 @@
                     android:layout_marginRight="8dp"
                     android:layout_toEndOf="@id/img_item_tetesan"
                     android:layout_toRightOf="@id/img_item_tetesan"
-                    android:text="TPM \t\t\t:"/>
+                    android:text="TPM :"/>
             <TextView
+
+                android:layout_alignParentEnd="true"
                 android:id="@+id/tv_TPM"
                 android:textColor="@color/colorBlack"
                 android:textSize="16sp"

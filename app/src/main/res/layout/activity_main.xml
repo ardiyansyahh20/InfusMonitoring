@@ -71,6 +71,7 @@
             android:paddingBottom="16sp">
 
             <include layout="@layout/item_cairan" />
+
             <include layout="@layout/item_tetesan" />
 
 
@@ -103,31 +104,39 @@
                     android:text="HITUNG TPM" />
 
                 <!--<Button-->
-                    <!--android:id="@+id/btn_set_mikro"-->
-                    <!--style="@style/Base.Widget.AppCompat.Button.Colored"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_weight="1"-->
-                    <!--android:text="@string/mikro" />-->
+                <!--android:id="@+id/btn_set_mikro"-->
+                <!--style="@style/Base.Widget.AppCompat.Button.Colored"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:text="@string/mikro" />-->
 
             </LinearLayout>
         </LinearLayout>
 
-        <Button
-            android:id="@+id/btn_logout"
-            style="@style/Base.Widget.AppCompat.Button.Colored"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="logout" />
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btn_profil"
-            style="@style/Base.Widget.AppCompat.Button.Colored"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Profil" />
+            <Button
+                android:id="@+id/btn_profil"
+                style="@style/Base.Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Profil" />
+
+            <Button
+                android:id="@+id/btn_logout"
+                style="@style/Base.Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="logout" />
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </ScrollView>

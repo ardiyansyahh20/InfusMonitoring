@@ -12,7 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.Setup"></activity>
+        <activity android:name=".Activity.Setup"
+            android:label="Hitung TPM"
+            android:parentActivityName=".Activity.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activity.MainActivity" />
+        </activity>
         <activity
             android:name=".Activity.DetailUserActivity"
             android:label="Profil"

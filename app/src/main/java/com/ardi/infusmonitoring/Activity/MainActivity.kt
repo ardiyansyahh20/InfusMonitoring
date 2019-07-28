@@ -17,20 +17,20 @@ import kotlinx.android.synthetic.main.item_cairan.*
 import kotlinx.android.synthetic.main.item_tetesan.*
 import org.jetbrains.anko.startActivity
 
-class MainActivity : AppCompatActivity(),InfuseView {
+class MainActivity : AppCompatActivity(), InfuseView {
     override fun setDataInfuse(list: List<Status>) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun getDataInfuse(list: List<Infuse>) {
 
-        if(!list.isNullOrEmpty()){
+        if (!list.isNullOrEmpty()) {
             val infuse = list[0]
             var status = "null"
 
-            if(infuse.stated.equals("1")){
+            if (infuse.stated.equals("1")) {
                 status = "ADA"
-            }else{
+            } else {
                 status = "Kosong"
             }
 
@@ -39,7 +39,6 @@ class MainActivity : AppCompatActivity(),InfuseView {
             tv_stat.setText("${status}")
             tv_TPM.setText("${infuse.tpm}")
         }
-
 
 
     }
@@ -60,9 +59,6 @@ class MainActivity : AppCompatActivity(),InfuseView {
     lateinit var gson: Gson
     lateinit var apiRepository: ApiRepository
     lateinit var presenter: InfusePresenter
-
-
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -101,13 +97,8 @@ class MainActivity : AppCompatActivity(),InfuseView {
 
         gson = Gson()
         apiRepository = ApiRepository()
-        presenter = InfusePresenter(apiRepository,gson,this)
+        presenter = InfusePresenter(apiRepository, gson, this)
         presenter.getDataInfuse()
-
-
-
-
-
 
 
         println("data user nama : $nama")
@@ -125,8 +116,8 @@ class MainActivity : AppCompatActivity(),InfuseView {
             startActivity<DetailUserActivity>("user" to user)
         }
         btn_set_makro.setOnClickListener {
-            startActivity<Setup>("data" to user)
-            finish()
+            startActivity<Setup>()
+
         }
 
     }
