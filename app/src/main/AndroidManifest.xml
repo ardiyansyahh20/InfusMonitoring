@@ -12,7 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.Setup"
+
+        <service
+            android:name="com.ardi.infusmonitoring.Item.MyJobService"
+            android:enabled="true"
+            android:exported="true"/>
+
+
+        <activity
+            android:name=".Activity.Setup"
             android:label="Hitung TPM"
             android:parentActivityName=".Activity.MainActivity">
             <meta-data
