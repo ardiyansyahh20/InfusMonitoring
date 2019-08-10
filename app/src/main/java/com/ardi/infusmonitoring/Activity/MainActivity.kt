@@ -1,6 +1,5 @@
 package com.ardi.infusmonitoring.Activity
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.ardi.infusmonitoring.ApiRepository.ApiRepository
@@ -8,14 +7,17 @@ import com.ardi.infusmonitoring.Entity.Infuse
 import com.ardi.infusmonitoring.Entity.Status
 import com.ardi.infusmonitoring.Entity.User
 import com.ardi.infusmonitoring.Interface.InfuseView
+import com.ardi.infusmonitoring.Item.MyJobService
 import com.ardi.infusmonitoring.Item.SharedPreference
 import com.ardi.infusmonitoring.Presenter.InfusePresenter
 import com.ardi.infusmonitoring.R
+import com.firebase.jobdispatcher.*
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_cairan.*
 import kotlinx.android.synthetic.main.item_tetesan.*
 import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.support.v4.onRefresh
 
 class MainActivity : AppCompatActivity(), InfuseView {
     override fun setDataInfuse(list: List<Status>) {
@@ -23,10 +25,11 @@ class MainActivity : AppCompatActivity(), InfuseView {
     }
 
     override fun getDataInfuse(list: List<Infuse>) {
+        sw.isRefreshing = false
 
         if (!list.isNullOrEmpty()) {
             val infuse = list[0]
-            var status = "null"
+            var status =""
 
             if (infuse.stated.equals("1")) {
                 status = "ADA"
@@ -59,6 +62,7 @@ class MainActivity : AppCompatActivity(), InfuseView {
     lateinit var gson: Gson
     lateinit var apiRepository: ApiRepository
     lateinit var presenter: InfusePresenter
+    lateinit var mDispatcher: FirebaseJobDispatcher
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -99,6 +103,9 @@ class MainActivity : AppCompatActivity(), InfuseView {
         apiRepository = ApiRepository()
         presenter = InfusePresenter(apiRepository, gson, this)
         presenter.getDataInfuse()
+        sw.onRefresh {
+            presenter.getDataInfuse()
+        }
 
 
         println("data user nama : $nama")
@@ -119,6 +126,28 @@ class MainActivity : AppCompatActivity(), InfuseView {
             startActivity<Setup>()
 
         }
+        mDispatcher = FirebaseJobDispatcher(GooglePlayDriver(this))
+        starJob()
+
+
+    }
+    fun starJob()
+    {
+        print("start job main \n")
+        val myJob = mDispatcher.newJobBuilder()
+                .setService(MyJobService::class.java)
+                .setTag("myJob")
+                .setRecurring(true)
+                .setLifetime(Lifetime.FOREVER)
+                .setTrigger(Trigger.executionWindow(0, 60))
+                .setReplaceCurrent(true)
+                .setRetryStrategy(RetryStrategy.DEFAULT_EXPONENTIAL)
+                .setConstraints(
+                        Constraint.ON_ANY_NETWORK
+                )
+                .build()
+        mDispatcher.mustSchedule(myJob)
+
 
     }
 }

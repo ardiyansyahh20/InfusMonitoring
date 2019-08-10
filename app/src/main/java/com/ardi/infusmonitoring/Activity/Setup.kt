@@ -5,7 +5,6 @@ import android.os.Bundle
 import com.ardi.infusmonitoring.ApiRepository.ApiRepository
 import com.ardi.infusmonitoring.Entity.Infuse
 import com.ardi.infusmonitoring.Entity.Status
-import com.ardi.infusmonitoring.Entity.User
 import com.ardi.infusmonitoring.Interface.InfuseView
 import com.ardi.infusmonitoring.Presenter.InfusePresenter
 import com.ardi.infusmonitoring.R
@@ -14,7 +13,6 @@ import kotlinx.android.synthetic.main.item_setup.*
 import kotlinx.android.synthetic.main.item_setup.edt_jumlah_ml
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
-import java.io.Serializable
 
 class Setup : AppCompatActivity(),InfuseView {
     override fun setDataInfuse(list: List<Status>) {
